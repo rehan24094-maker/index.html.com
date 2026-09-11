@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Tools Hub</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            color: #222;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+        }
+
+        .navbar {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 50px 20px 70px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            color: #d1d5db;
+            font-size: 18px;
+        }
+
+        .search {
+            width: 90%;
+            max-width: 600px;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            margin-top: 20px;
+            outline: none;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .categories {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .category {
+            padding: 11px 18px;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .category:hover {
+            background: #4f46e5;
+            color: white;
+        }
+
+        .tools {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .tool {
+            background: white;
+            padding: 22px;
+            border-radius: 14px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .tool h3 {
+            margin-top: 0;
+            font-size: 21px;
+        }
+      #about {
+    scroll-margin-top: 20px;
+      }
+.badge {
+    display: inline-block;
+    background: #e8f5e9;
+    color: #2e7d32;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+        .tool p {
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 16px;
+            background: #4f46e5;
+            color: white;
+            text-decoration: none;
+            border-radius: 7px;
+        }
+
+        .button:hover {
+            background: #3730a3;
+        }
+
+        footer {
+            margin-top: 60px;
+            padding: 30px;
+            text-align: center;
+            background: #111827;
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🤖 AI Tools Hub
+        </div>
+
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#categories">Categories</a>
+            <a href="#tools">AI Tools</a>
+            <a href="#about">about</a>
+        </div>
+
+    </nav>
+
+    <div class="hero">
+
+        <h1>Discover the Best AI Tools</h1>
+
+        <p>
+            Find powerful AI tools for work, study, creativity and more.
+        </p>
+
+        <input
+            id="searchBox"
+            class="search"
+            type="text"
+            placeholder="🔎 Search AI tools..."
+        >
+
+    </div>
+
+</header>
+
+
+<main class="container">
+
+    <h2 id="categories">Categories</h2>
+
+    <div class="categories">
+
+        <button class="category" onclick="filterTools('all')">
+            🌐 All
+        </button>
+
+        <button class="category" onclick="filterTools('writing')">
+            ✍️ Writing
+        </button>
+
+        <button class="category" onclick="filterTools('image')">
+            🎨 Image
+        </button>
+
+        <button class="category" onclick="filterTools('video')">
+            🎬 Video
+        </button>
+
+        <button class="category" onclick="filterTools('audio')">
+            🎵 Audio
+        </button>
+
+        <button class="category" onclick="filterTools('coding')">
+            💻 Coding
+        </button>
+
+        <button class="category" onclick="filterTools('study')">
+            📚 Study
+        </button>
+
+    </div>
+
+
+    <h2 id="tools">Popular AI Tools</h2>
+
+    <div class="tools">
+
+        <div class="tool" data-category="writing">
+            <h3>🤖 ChatGPT</h3>
+           <span class="badge">Free & Paid</span>
+            <p>
+                AI assistant for writing, ideas, coding, research and more.
+            </p>
+            <a
+                href="https://chatgpt.com/"
+                target="_blank"
+                class="button"
+            >
+                Visit Tool
+            </a>
+        </div>
+
+
+        <div class="tool" data-category="writing">
+            <h3>✨ Claude</h3>
+            <p>
+                AI assistant for writing, analysis, coding and creative work.
+            </p>
+            <a
+                href="https://claude.ai/"
+                target="_blank"
+                class="button"
+            >
+                Visit Tool
+            </a>
+        </div>
+
+
+        <div class="tool" data-category="writing">
+            <h3>💎 Gemini</h3>
+            <p>
+                Google's AI assistant for learning, writing and research.
+            </p>
+            <a
+                href="https://gemini.google.com/"
+                target="_blank"
+                class="button"
+            >
+                Visit Tool
+            </a>
+        </div>
+
+
+        <div class="tool" data-category="image">
+            <h3>🎨 Canva</h3>
+            <p>
+                Create beautiful designs, images and creative content.
+            </p>
+            <a
+                href="https://www.canva.com/"
+                target="_blank"
+                class="button"
+            >
+                Visit Tool
+            </a>
+        </div>
+
+
+        <div class="tool" data-category="video">
+            <h3>🎬 Runway</h3>
+            <p>
+                AI tools for creating and editing amazing videos.
+            </p>
+            <a
+                href="https://runwayml.com/"
+                target="_blank"
+                class="button"
+            >
+                Visit Tool
+            </a>
+        </div>
+
+
+        <div class="tool" data-category="audio">
+            <h3>🎵 ElevenLabs</h3>
+            <p>
+                AI voice and audio tools for creators and developers.
+            </p>
+            <a
+                href="https://elevenlabs.io/"
+                target="_blank"
+                class="button"
+            >
+                Visit Tool
+            </a>
+        </div>
+
+
+        <div class="tool" data-category="coding">
+            <h3>💻 GitHub Copilot</h3>
+            <p>
+                AI coding assistant for developers and programmers.
+            </p>
+            <a
+                href="https://github.com/features/copilot"
+                target="_blank"
+                class="button"
+            >
+                Visit Tool
+            </a>
+        </div>
+
+
+        <div class="tool" data-category="study">
+            <h3>📚 Perplexity</h3>
+            <p>
+                AI search and research assistant for finding information.
+            </p>
+            <a
+                href="https://www.perplexity.ai/"
+                target="_blank"
+                class="button"
+            >
+                Visit Tool
+            </a>
+        </div>
+
+    </div>
+
+</main>
+<section id="about">
+    <h2>about AI Tools Hub</h2>
+    <p>
+        AI Tools Hub is a simple directory to discover useful AI tools
+        for work, study, creativity, coding and more.
+    </p>
+</section>
+
+<footer id="footer">
+    © 2026 AI Tools Hub
+</footer>
+
+
+<script>
+document.querySelector('a[href="#about"]').addEventListener("click", function(e) {
+    e.preventDefault();
+    document.getElementById("about").scrollIntoView({ behavior: "smooth" });
+});
+    const searchBox = document.getElementById("searchBox");
+    const tools = document.querySelectorAll(".tool");
+
+
+    function filterTools(category) {
+
+        tools.forEach(function(tool) {
+
+            if (
+                category === "all" ||
+                tool.dataset.category === category
+            ) {
+                tool.style.display = "block";
+            } else {
+                tool.style.display = "none";
+            }
+
+        });    
+
+    }
+
+
+    searchBox.addEventListener("input", function() {
+
+        const searchText = this.value.toLowerCase();
+
+        tools.forEach(function(tool) {
+
+            const text = tool.innerText.toLowerCase();
+
+            if (text.includes(searchText)) {
+                tool.style.display = "block";
+            } else {
+                tool.style.display = "none";
+            }
+
+        });
+
+    });
+
+</script>
+
+</body>
+</html>
