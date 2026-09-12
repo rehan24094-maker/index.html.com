@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rehan24094-maker.github.io/index.html.com/sitemap.xml
